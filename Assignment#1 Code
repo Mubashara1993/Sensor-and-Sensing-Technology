@@ -1,1 +1,34 @@
 # Sensor-and-Sensing-Technology
+int ThermPin = 0;
+int Vo;
+float R1 = 10000;
+float c1 = 1.009249522e-03; 
+float c2 = 2.378405444e-04; 
+float c3 = 2.019202697e-07;
+float logR2,R2,temp,
+
+void setup()
+{
+Serial.begin(9600);
+}
+
+void display(float temp)
+{
+Serial.print("Temperature: ");
+Serial.print(temp);
+Serial.print("  Celcius");
+}
+
+void loop()
+{
+
+ Vo = analogRead(ThermPin);
+ 
+  R2=R1 * (1023.0 / (float)Vo - 1.0);
+  logR2 = log(R2);
+  temp = (1.0 / (c1 + c2*logR2 + c3*logR2*logR2*logR2));
+  temp = temp - 273.15;
+
+display(temp);
+delay(500);
+}
