@@ -1,0 +1,30 @@
+##############################################################################################################
+                                                  PROJECT PROPOSAL
+
+Project Title:
+- "OBSTACLE SENSING DEVICE"
+
+Description:
+-This device will enable you to recognize the presence of obstacle and distance within certain limit. 
+-This feature can be used in real time gaming and security applications.
+
+Scope:
+- Security 
+- Gaming
+
+Components Required:
+•	HC- SR04 ------------------------------(-Provision Requested)
+•	Three resistors of 220 ohms -----------(-Provision Requested)
+•	Three resistors of 330 ohms -----------(-Provision Requested)
+•	Buzzer --------------------------------(-Provision Requested)
+•	Jumper wires
+•	Three LEDs of different colors
+•	Breadboard
+
+Idea References:
+-http://www.buildcircuit.com/obstacle-sensor-using-arduino-and-hcsr04/
+-https://www.youtube.com/watch?v=Fn6mVEKSLZc&feature=youtu.be
+-http://www.instructables.com/id/Ultrasonic-Sensor-HC-SR04-Arduino-Project/
+-https://create.arduino.cc/projecthub/onyx/ultrasonic-sensor-alarm-1ec0f3
+
+##############################################################################################################
