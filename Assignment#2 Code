@@ -1,0 +1,48 @@
+//Assignment#2
+//Code Refinement of Assignment#2
+
+float R1 = 10000;
+float logValueR2;
+float c1 = 1.009249522e-03; 
+float c2 = 2.378405444e-04; 
+float c3 = 2.019202697e-07;
+float R2;
+float temp;
+
+void setup()
+{
+Serial.begin(1000);
+pinMode(A0,INPUT);
+}
+
+int Thermistor(int ADC)  //function for determining temp value
+{
+ R2=R1 * (1023.0 / (float)ADC - 1.0);
+  logValueR2 = log(R2);
+  temp = (1.0 / (c1 + c2*logValueR2 + c3*logValueR2*logValueR2*logValueR2));
+  temp = temp - 273.15;
+  return temp;
+}
+
+void loop()
+{
+int Num=1;
+int i=0;
+int reading=0;
+
+reading=analogRead(A0); // external reading analog volt from sensor and save to variable
+Serial.print("We got reading :  "); 
+Serial.println(int(reading));
+
+Serial.print("Calculation #  ");
+Serial.println(int(Num));
+
+While(i<=1023)
+{
+Serial.println(int(Thermistor(reading)));  Calling formula function 
+i++;
+}
+
+Num++;
+delay(1000);  // update sensor reading after interval
+}
